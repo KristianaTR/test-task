@@ -1,0 +1,29 @@
+@import './variables';
+
+// Breakpoints
+@mixin mobileSMaxBreakPoint {
+    @media (max-width: #{$mobileS}) {
+        @content;
+    }
+}
+
+@mixin mobileMMaxBreakPoint {
+    @media (max-width: #{$mobileM}) {
+        @content;
+    }
+}
+
+@mixin mobileLMaxBreakPoint {
+    @media (max-width: #{$mobileL}) {
+        @content;
+    }
+}
+
+@mixin mobileLandscapeMaxBreakPoint {
+    @media (max-width: #{$mobileLandscape}) {
+        @content;
+    }
+}
+
+//add rest of breakpoints if needed
+

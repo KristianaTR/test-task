@@ -25,5 +25,11 @@
     }
 }
 
+@mixin tabletMaxBreakPoint {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
 //add rest of breakpoints if needed
 

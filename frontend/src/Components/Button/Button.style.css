@@ -1,0 +1,23 @@
+/*colors*/
+/*fonts*/
+/*Screen sizes*/
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #aea69f;
+  color: #2d2a2d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+button:hover {
+  background-color: #66574b;
+  color: #ffffff;
+}
+button:active {
+  transform: scale(0.96);
+}/*# sourceMappingURL=Button.style.css.map */

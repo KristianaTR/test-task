@@ -1,0 +1,23 @@
+@use "../../Styles/variables" as color;
+
+section {
+  header {
+    // position: fixed;
+    background: color.$background-white;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    // z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid color.$text-dark;
+
+    .product-list__actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}

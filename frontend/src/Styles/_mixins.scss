@@ -1,35 +1,41 @@
-@import './variables';
+@import "./variables";
+
+//flex container
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // Breakpoints
 @mixin mobileSMaxBreakPoint {
-    @media (max-width: #{$mobileS}) {
-        @content;
-    }
+  @media (max-width: #{$mobileS}) {
+    @content;
+  }
 }
 
 @mixin mobileMMaxBreakPoint {
-    @media (max-width: #{$mobileM}) {
-        @content;
-    }
+  @media (max-width: #{$mobileM}) {
+    @content;
+  }
 }
 
 @mixin mobileLMaxBreakPoint {
-    @media (max-width: #{$mobileL}) {
-        @content;
-    }
+  @media (max-width: #{$mobileL}) {
+    @content;
+  }
 }
 
 @mixin mobileLandscapeMaxBreakPoint {
-    @media (max-width: #{$mobileLandscape}) {
-        @content;
-    }
+  @media (max-width: #{$mobileLandscape}) {
+    @content;
+  }
 }
 
 @mixin tabletMaxBreakPoint {
-    @media (max-width: #{$tablet}) {
-        @content;
-    }
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
 }
 
 //add rest of breakpoints if needed
-

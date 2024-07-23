@@ -1,0 +1,15 @@
+@use '../../Styles/mixins' as *;
+@use '../../Styles/variables' as color;
+
+.product-item__container {
+    @include flex-center;
+    flex-direction: column;
+    border: 1px solid color.$text-dark;
+    border-radius: 8px;
+    background-color: color.$background-light;
+    padding: 20px;
+    
+    &:hover {
+        box-shadow: color.$hover;
+    }
+}

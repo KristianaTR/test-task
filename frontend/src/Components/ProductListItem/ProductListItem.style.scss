@@ -1,15 +1,32 @@
-@use '../../Styles/mixins' as *;
-@use '../../Styles/variables' as color;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as color;
 
 .product-item__container {
+  @include flex-center;
+  flex-direction: column;
+  border: 1px solid color.$text-dark;
+  border-radius: 8px;
+  background-color: color.$background-light;
+  padding: 20px;
+  position: relative;
+
+  &:hover {
+    box-shadow: color.$hover;
+  }
+
+  .delete-checkbox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .product-item__details {
     @include flex-center;
     flex-direction: column;
-    border: 1px solid color.$text-dark;
-    border-radius: 8px;
-    background-color: color.$background-light;
-    padding: 20px;
-    
-    &:hover {
-        box-shadow: color.$hover;
+    gap: 8px;
+
+    p {
+      text-align: center;
     }
+  }
 }

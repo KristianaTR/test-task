@@ -1,1 +1,15 @@
-/*# sourceMappingURL=ProductListPage.style.css.map */
+/*colors*/
+/*box-shadow*/
+/*fonts*/
+/*Screen sizes*/
+.product-list__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .product-list__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}/*# sourceMappingURL=ProductListPage.style.css.map */

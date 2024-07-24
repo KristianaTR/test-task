@@ -1,6 +1,8 @@
 import "./ProductListPage.style.scss";
 import Button from "../../Components/Button";
 import { useNavigate } from "react-router-dom";
+import productList from "../../productData";
+import ProductListItem from "../../Components/ProductListItem";
 
 const ProductListPage = () => {
   const navigate = useNavigate();
@@ -13,14 +15,15 @@ const ProductListPage = () => {
       <header>
         <h1>Product List</h1>
         <div className="product-list actions">
-          <Button text="ADD" onClick={goToProductAddPage}/>
+          <Button text="ADD" onClick={goToProductAddPage} />
           <Button text="MASS DELETE" />
         </div>
       </header>
       <div className="product-list__container">
-        <p>This is Product List container</p>
+        {productList.map((product) => (
+          <ProductListItem key={product.sku} product={product}/>
+        ))}
       </div>
-
     </section>
   );
 };

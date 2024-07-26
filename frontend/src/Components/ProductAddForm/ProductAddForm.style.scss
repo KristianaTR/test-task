@@ -1,0 +1,40 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+form {
+  // position: absolute;
+  // top: 60px;
+
+  .product_form-actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 20px;
+  }
+
+  .product_form-fields {
+    margin: 40px 20px;
+
+    .type-switcher {
+      margin-bottom: 32px;
+      display: block;
+      position: relative;
+
+      label {
+        @include label;
+      }
+
+      select {
+        border: 1px solid $text-grey;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        padding: 12px;
+        padding-top: 20px;
+        font-size: 16px;
+        color: $text-grey;
+      }
+    }
+  }
+}

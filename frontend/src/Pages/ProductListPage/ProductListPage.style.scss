@@ -1,5 +1,14 @@
 @use "../../Styles/mixins" as *;
 
+.product-list {
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .product-list__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

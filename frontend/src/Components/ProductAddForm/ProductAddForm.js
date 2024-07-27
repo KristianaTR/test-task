@@ -1,6 +1,10 @@
 import "./ProductAddForm.style.scss";
 import Input from "../Input";
 import Button from "../Button";
+import ProductTypeSwitcher from "../ProductTypeSwitcher";
+import DataFieldBook from "../DataFieldBook";
+import DataFieldDVD from "../DataFieldDVD";
+import DataFieldFurniture from "../DataFieldFurniture";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -93,20 +97,33 @@ const ProductAddForm = () => {
           alertMessage={errors.price}
           showAlert={!!errors.price}
         />
-        <div className="type-switcher">
-          <label htmlFor="productType">Type Switcher</label>
-          <select
-            id="productType"
-            name="productType"
-            value={formData.productType}
-            onChange={handleProductTypeChange}
-          >
-            <option value="">Select a product type</option>
-            <option value="DVD">DVD</option>
-            <option value="Book">Book</option>
-            <option value="Furniture">Furniture</option>
-          </select>
-        </div>
+        <ProductTypeSwitcher
+          productType={formData.productType}
+          onChange={handleProductTypeChange}
+        />
+        {formData.productType === "Book" && (
+          <DataFieldBook
+            weight={formData.weight}
+            onChange={handleChange}
+            errorMessage="I need to set up the logic!!"
+          />
+        )}
+        {formData.productType === "DVD" && (
+          <DataFieldDVD
+            size={formData.size}
+            onChange={handleChange}
+            errorMessage="I need to set up the logic!!"
+          />
+        )}
+        {formData.productType === "Furniture" && (
+          <DataFieldFurniture
+            height={formData.height}
+            width={formData.width}
+            length={formData.length}
+            onChange={handleChange}
+            errorMessage="I need to set up the logic!!"
+          />
+        )}
       </div>
     </form>
   );

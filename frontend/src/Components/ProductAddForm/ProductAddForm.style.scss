@@ -1,5 +1,4 @@
 @import "../../Styles/variables";
-@import "../../Styles/mixins";
 
 form {
   // position: absolute;
@@ -16,25 +15,16 @@ form {
   .product_form-fields {
     margin: 40px 20px;
 
-    .type-switcher {
+    .data-field {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    //   border: 1px solid $text-grey;
+      border-radius: 4px;
       margin-bottom: 32px;
-      display: block;
-      position: relative;
-
-      label {
-        @include label;
-      }
-
-      select {
-        border: 1px solid $text-grey;
-        border-radius: 4px;
-        box-sizing: border-box;
-        display: block;
-        padding: 12px;
-        padding-top: 20px;
-        font-size: 16px;
-        color: $text-grey;
-      }
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
     }
   }
 }

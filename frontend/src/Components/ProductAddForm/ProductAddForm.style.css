@@ -2,10 +2,6 @@
 /*box-shadow*/
 /*fonts*/
 /*Screen sizes*/
-/*colors*/
-/*box-shadow*/
-/*fonts*/
-/*Screen sizes*/
 form .product_form-actions {
   display: flex;
   justify-content: end;
@@ -16,29 +12,13 @@ form .product_form-actions {
 form .product_form-fields {
   margin: 40px 20px;
 }
-form .product_form-fields .type-switcher {
+form .product_form-fields .data-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 4px;
   margin-bottom: 32px;
-  display: block;
-  position: relative;
-}
-form .product_form-fields .type-switcher label {
-  position: absolute;
-  font-size: 12px;
-  line-height: 19px;
-  color: #706c6c;
-  background-color: #eceff2;
-  border-radius: 4px;
-  padding: 2px 6px;
-  top: -12px;
-  left: 10px;
-}
-form .product_form-fields .type-switcher select {
-  border: 1px solid #706c6c;
-  border-radius: 4px;
-  box-sizing: border-box;
-  display: block;
-  padding: 12px;
-  padding-top: 20px;
-  font-size: 16px;
-  color: #706c6c;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }/*# sourceMappingURL=ProductAddForm.style.css.map */

@@ -1,0 +1,34 @@
+/*colors*/
+/*box-shadow*/
+/*fonts*/
+/*Screen sizes*/
+/*colors*/
+/*box-shadow*/
+/*fonts*/
+/*Screen sizes*/
+.type-switcher {
+  margin-bottom: 32px;
+  display: block;
+  position: relative;
+}
+.type-switcher label {
+  position: absolute;
+  font-size: 12px;
+  line-height: 19px;
+  color: #706c6c;
+  background-color: #eceff2;
+  border-radius: 4px;
+  padding: 2px 6px;
+  top: -12px;
+  left: 10px;
+}
+.type-switcher select {
+  border: 1px solid #706c6c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  padding: 12px;
+  padding-top: 20px;
+  font-size: 16px;
+  color: #706c6c;
+}/*# sourceMappingURL=ProductTypeSwitcher.style.css.map */

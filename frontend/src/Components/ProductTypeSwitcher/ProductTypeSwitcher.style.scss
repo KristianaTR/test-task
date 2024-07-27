@@ -1,0 +1,23 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+.type-switcher {
+  margin-bottom: 32px;
+  display: block;
+  position: relative;
+
+  label {
+    @include label;
+  }
+
+  select {
+    border: 1px solid $text-grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    padding: 12px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: $text-grey;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+
+.form-input {
+  position: relative;
+  margin-bottom: 32px;
+  display: block;
+
+  label {
+    @include label;
+  }
+
+  input {
+    border: 1px solid $text-grey;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 12px;
+    padding-top: 20px;
+    font-size: 16px;
+
+    &:focus-within {
+      border-color: $accent;
+    }
+  }
+
+  .error-message {
+    color: $text-alert;
+    margin-top: 8px;
+  }
+}

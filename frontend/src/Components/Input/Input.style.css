@@ -1,0 +1,41 @@
+/*colors*/
+/*box-shadow*/
+/*fonts*/
+/*Screen sizes*/
+/*colors*/
+/*box-shadow*/
+/*fonts*/
+/*Screen sizes*/
+.form-input {
+  position: relative;
+  margin-bottom: 32px;
+  display: block;
+}
+.form-input label {
+  position: absolute;
+  font-size: 12px;
+  line-height: 19px;
+  color: #706c6c;
+  background-color: #eceff2;
+  border-radius: 4px;
+  padding: 2px 6px;
+  top: -12px;
+  left: 10px;
+}
+.form-input input {
+  border: 1px solid #706c6c;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding: 12px;
+  padding-top: 20px;
+  font-size: 16px;
+}
+.form-input input:focus-within {
+  border-color: #66574b;
+}
+.form-input .error-message {
+  color: #bb2124;
+  margin-top: 8px;
+}/*# sourceMappingURL=Input.style.css.map */

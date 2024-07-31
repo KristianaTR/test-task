@@ -23,10 +23,10 @@
     &:focus-within {
       border-color: $accent;
     }
+
+    &.error {
+      border-color: $text-alert;
+    }
   }
 
-  .error-message {
-    color: $text-alert;
-    margin-top: 8px;
-  }
 }

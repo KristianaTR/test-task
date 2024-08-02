@@ -19,5 +19,11 @@
     padding-top: 20px;
     font-size: 16px;
     color: $text-grey;
+
+    &.error {
+      border-color: $text-alert;
+    }
+
   }
+
 }

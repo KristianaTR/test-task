@@ -7,6 +7,10 @@ import DataFieldDVD from "../DataFieldDVD";
 import DataFieldFurniture from "../DataFieldFurniture";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  validateField,
+  validateForm,
+} from "../../Utils/Validation/FormValidation";
 
 const ProductAddForm = () => {
   const [formData, setFormData] = useState({
@@ -28,29 +32,27 @@ const ProductAddForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleProductTypeChange = (e) => {
-    setFormData({ ...formData, productType: e.target.value });
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const newErrors = validateField(name, value, formData, errors);
+    setErrors(newErrors);
   };
 
-  const validateForm = () => {
-    let newErrors = {};
-
-    if (!formData.sku) newErrors.sku = "SKU is required";
-    if (!formData.name) newErrors.name = "Name is required";
-    if (!formData.price) newErrors.price = "Price is required";
-    // Add more validation as needed
-
+  const handleProductTypeChange = (e) => {
+    setFormData({ ...formData, productType: e.target.value });
+    const newErrors = validateForm(formData);
     setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    const newErrors = validateForm(formData);
+    if (Object.keys(newErrors).length === 0) {
       // Handle form submission
       console.log(formData);
-      navigate("/product-list");
+      navigate("/");
+    } else {
+      setErrors(newErrors);
     }
   };
 
@@ -65,54 +67,69 @@ const ProductAddForm = () => {
         <Button text="Save" type="submit" />
         <Button text="Cancel" onClick={goToProductListPage} />
       </div>
+      <p>* Indicates mandatory fields</p>
       <div className="product_form-fields">
         <Input
-          label="SKU"
+          label="SKU *"
           id="sku"
           name="sku"
           placeholder="Enter SKU"
           value={formData.sku}
           onChange={handleChange}
-          alertMessage={errors.sku}
-          showAlert={!!errors.sku}
+          onBlur={handleBlur}
+          errorMessage={errors.sku}
+          showError={!!errors.sku}
         />
         <Input
-          label="Name"
+          label="Name *"
           id="name"
           name="name"
           placeholder="Enter Name"
           value={formData.name}
           onChange={handleChange}
-          alertMessage={errors.name}
-          showAlert={!!errors.name}
+          onBlur={handleBlur}
+          errorMessage={errors.name}
+          showError={!!errors.name}
         />
         <Input
           type="number"
-          label="Price ($)"
+          label="Price ($) *"
           id="price"
           name="price"
           placeholder="Enter Price"
           value={formData.price}
           onChange={handleChange}
-          alertMessage={errors.price}
-          showAlert={!!errors.price}
+          onBlur={handleBlur}
+          errorMessage={errors.price}
+          showError={!!errors.price}
         />
         <ProductTypeSwitcher
           productType={formData.productType}
           onChange={handleProductTypeChange}
+          onBlur={handleBlur}
+          errorMessage={errors.productType}
+          showError={!!errors.productType}
         />
         {formData.productType === "Book" && (
           <DataFieldBook
             weight={formData.weight}
             onChange={handleChange}
-            errorMessage="I need to set up the logic!!"
+            onBlur={handleBlur}
+            errorMessage={errors.weight}
+            showError={!!errors.weight}
+            descriptionMessage="Please, provide weight!"
+            showDescription={!errors.size}
           />
         )}
         {formData.productType === "DVD" && (
           <DataFieldDVD
             size={formData.size}
             onChange={handleChange}
-            errorMessage="I need to set up the logic!!"
+            onBlur={handleBlur}
+            errorMessage={errors.size}
+            showError={!!errors.size}
+            descriptionMessage="Please, provide size!"
+            showDescription={!errors.size}
           />
         )}
         {formData.productType === "Furniture" && (
@@ -121,7 +138,15 @@ const ProductAddForm = () => {
             width={formData.width}
             length={formData.length}
             onChange={handleChange}
-            errorMessage="I need to set up the logic!!"
+            onBlur={handleBlur}
+            errorMessage={{
+              height: errors.height,
+              width: errors.width,
+              length: errors.length,
+            }}
+            showError={!!errors.height || !!errors.width || !!errors.length}
+            descriptionMessage="Please, provide dimensions!"
+            showDescription={!errors.height && !errors.width && !errors.length}
           />
         )}
       </div>

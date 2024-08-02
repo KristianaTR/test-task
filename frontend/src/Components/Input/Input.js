@@ -1,4 +1,4 @@
-import './Input.style.scss';
+import "./Input.style.scss";
 
 const Input = ({
   type = "text",
@@ -8,22 +8,30 @@ const Input = ({
   placeholder,
   value,
   onChange,
+  onBlur,
   errorMessage,
   showError = false,
+  descriptionMessage,
+  showDescription = true,
 }) => {
   return (
     <div className="form-input">
       <label htmlFor={id}>{label}</label>
       <input
+        className={`input ${showError && "error"}`}
         type={type}
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
       />
       {showError && errorMessage && (
-        <p className="error-message">{errorMessage}</p>
+        <p className="message error">{errorMessage}</p>
+      )}
+      {!showError && showDescription && descriptionMessage && (
+        <p className="message description">{descriptionMessage}</p>
       )}
     </div>
   );
